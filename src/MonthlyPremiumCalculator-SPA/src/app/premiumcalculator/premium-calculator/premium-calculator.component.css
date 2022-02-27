@@ -8,7 +8,20 @@
 h5{
     display: inline;
 }
-input{
-    margin-left:5px;
+input, select{
+    margin:0 10px 0 10px;
     float:right;
+    width:200px;
+}
+
+.invalid-feedback{
+    display:inline-block;
+    position: fixed;
+    left:70%;
+    width:30%;
+}
+
+.wrapper {
+    display:table-cell;
+    vertical-align:middle;
 }

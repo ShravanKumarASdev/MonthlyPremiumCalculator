@@ -2,19 +2,71 @@
     <h1>Welcome to Premium calculator</h1>
     <p class="lead">A platform to calculate your monthly premium</p>
     <div class="jumbtron">
-    <form #form="ngForm" autocomplete="off" class="col-md-4 form">
-      <div class="form-group text-center">  
-        <h5 class="text-center text-primary">Name</h5>
-        <input type="text" name="name" [(ngModel)]="formData.name" required>
-      </div>
-      <div class="form-group text-center">
-        <h5 class="text-center text-primary">Age</h5>
-        <input type="text" name="age" [(ngModel)]="formData.age" required>
-      </div>
-      <div class="form-group text-center">
-        <button class="btn btn-success mr-4" [disabled]="form.invalid" type="submit">Calculate</button>
-        <button class="btn btn-primary" type="button">Reset</button>
-      </div>
-    </form>
-  </div>
+        <form [formGroup]="form" autocomplete="off" class="col-md-9">
+        <div class="form-group text-center">  
+            <h5 class="text-center text-primary">Name</h5>
+            <input type="text" name="name" formControlName="name" [(ngModel)]="formData.Name" [ngClass]="{ 'is-invalid': submitted && f['name'].errors}">
+            <div *ngIf="submitted && f['name'].errors" class="invalid-feedback " >
+                <div *ngIf="f['name'].errors['required']">Name is required</div>
+                <div *ngIf="f['name'].errors['pattern']">Name should only contain letters</div>
+            </div>
+        </div>      
+        <div class="form-group text-center">
+            <h5 class="text-center text-primary">Date of Birth</h5>
+            <input type="date" name="dateOfBirth" min="1922-03-01" max="{{currentDate|date:'yyyy-MM-dd'}}" formControlName="dateOfBirth" [(ngModel)]="formData.DateOfBirth" (change)="onDataChange()" [ngClass]="{ 'is-invalid': submitted && f['dateOfBirth'].errors}">
+            <div *ngIf="submitted && f['dateOfBirth'].errors" class="invalid-feedback">
+                <div *ngIf="f['dateOfBirth'].errors['required']">Date Of Birth is required</div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <h5 class="text-center text-primary">Age</h5>
+            <input type="text" name="age" [(ngModel)]="formData.Age" formControlName="age" readonly>
+            <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+                <div *ngIf="f['age'].errors['required']">Age is required</div>
+                <div *ngIf="f['age'].errors['pattern']">Age should only contain numbers</div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <h5 class="text-center text-primary">Occupation</h5>
+            <select formControlName="occupation" [(ngModel)]="formData.Occupation" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f['occupation'].errors}">  
+                <option *ngFor="let occupation of occupations" [ngValue]="occupation">{{occupation}}</option>
+            </select>  
+            <div *ngIf="submitted && f['occupation'].errors" class="invalid-feedback wrapper">
+                <div *ngIf="f['occupation'].errors['required']">Occupation is required</div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <h5 class="text-center text-primary">Death Sum Insured</h5>
+            <input type="text" name="deathSumInsured" formControlName="deathSumInsured" [(ngModel)]="formData.DeathSumInsured" required  [ngClass]="{ 'is-invalid': submitted && f['deathSumInsured'].errors}">
+            <div *ngIf="submitted && f['deathSumInsured'].errors" class="invalid-feedback">
+                <div *ngIf="f['deathSumInsured'].errors['required']">DeathSumInsured is required</div>
+                <div *ngIf="f['deathSumInsured'].errors['pattern']">DeathSumInsured should only contain numbers > 0</div>
+            </div>
+        </div>
+        <div class="form-group text-center">
+            <button class="btn btn-success mr-4" (click)="calculatePremium()" type="submit">Calculate</button>
+            <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+        </div>
+        </form>
+    </div>
+
+    <div class="modal" tabindex="-1" role="dialog" [ngStyle]="{'display':displayStyle}">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Premium popup</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Calculated premium is {{calculatedPremium}}</p>
+            
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-danger" 
+                            (click)="closePopup()">
+                    Close
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

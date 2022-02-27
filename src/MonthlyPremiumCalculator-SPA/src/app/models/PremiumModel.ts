@@ -2,9 +2,9 @@ import { StringMapWithRename } from "@angular/compiler/src/compiler_facade_inter
 
 export class PremiumInputModel
     {
-        age: number;
-        name: string;
-        dateOfBirth: string;
-        occupation: string;
-        deathSumInsured: number;
+        Age: number;
+        Name: string;
+        DateOfBirth: string;
+        Occupation: string;
+        DeathSumInsured: number;
     }

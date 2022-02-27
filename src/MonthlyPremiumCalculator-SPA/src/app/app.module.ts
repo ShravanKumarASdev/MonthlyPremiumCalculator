@@ -5,7 +5,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import {PremiumCalculatorService} from './services/PremiumCalculatorService';
 import { PremiumCalculatorComponent } from './premiumcalculator/premium-calculator/premium-calculator.component';
@@ -20,7 +20,8 @@ import { PremiumCalculatorComponent } from './premiumcalculator/premium-calculat
     AppRoutingModule,
     NgbModule,
     HttpClientModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [PremiumCalculatorService],
   bootstrap: [AppComponent]
