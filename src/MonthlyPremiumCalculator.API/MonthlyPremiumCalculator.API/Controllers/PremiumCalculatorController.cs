@@ -33,7 +33,7 @@ namespace MonthlyPremiumCalculator.API.Controllers
             var selectedRatingFactor = ratingFactors.FirstOrDefault
                 (ratingFactor => ratingFactor.Rating == selectedRating).Factor;
 
-            return (decimal)premiumInputModel.DeathSumInsured * (decimal)premiumInputModel.Age * selectedRatingFactor / 1000 * 12;
+            return ((decimal)premiumInputModel.DeathSumInsured * (decimal)premiumInputModel.Age * selectedRatingFactor) / 1000 * 12;
         }
     }
 }

@@ -13,7 +13,7 @@
         </div>      
         <div class="form-group text-center">
             <h5 class="text-center text-primary">Date of Birth</h5>
-            <input type="date" name="dateOfBirth" min="1922-03-01" max="{{currentDate|date:'yyyy-MM-dd'}}" formControlName="dateOfBirth" [(ngModel)]="formData.DateOfBirth" (change)="onDataChange()" [ngClass]="{ 'is-invalid': submitted && f['dateOfBirth'].errors}">
+            <input type="date" name="dateOfBirth" min="1922-03-01" max="{{currentDate|date:'yyyy-MM-dd'}}" formControlName="dateOfBirth" [(ngModel)]="formData.DateOfBirth" (change)="onDateChange()" [ngClass]="{ 'is-invalid': submitted && f['dateOfBirth'].errors}">
             <div *ngIf="submitted && f['dateOfBirth'].errors" class="invalid-feedback">
                 <div *ngIf="f['dateOfBirth'].errors['required']">Date Of Birth is required</div>
             </div>
@@ -28,7 +28,7 @@
         </div>
         <div class="form-group text-center">
             <h5 class="text-center text-primary">Occupation</h5>
-            <select formControlName="occupation" [(ngModel)]="formData.Occupation" class="form-control"  [ngClass]="{ 'is-invalid': submitted && f['occupation'].errors}">  
+            <select formControlName="occupation" [(ngModel)]="formData.Occupation" class="form-control" (change)="calculatePremium()" [ngClass]="{ 'is-invalid': submitted && f['occupation'].errors}">  
                 <option *ngFor="let occupation of occupations" [ngValue]="occupation">{{occupation}}</option>
             </select>  
             <div *ngIf="submitted && f['occupation'].errors" class="invalid-feedback wrapper">
@@ -43,9 +43,9 @@
                 <div *ngIf="f['deathSumInsured'].errors['pattern']">DeathSumInsured should only contain numbers > 0</div>
             </div>
         </div>
-        <div class="form-group text-center">
-            <button class="btn btn-success mr-4" (click)="calculatePremium()" type="submit">Calculate</button>
-            <button class="btn btn-primary" type="button" (click)="reset()">Reset</button>
+        <div class="form-group text-center col-md-4 offset-md-6">
+            <button class="btn btn-success mr-2" (click)="calculatePremium()" type="submit">Calculate</button>
+            <button class="btn btn-primary mr-4" type="button" (click)="reset()">Reset</button>
         </div>
         </form>
     </div>
@@ -57,7 +57,7 @@
                     <h4 class="modal-title">Premium popup</h4>
                 </div>
                 <div class="modal-body">
-                    <p>Calculated premium is {{calculatedPremium}}</p>
+                    <p>Your monthly premium is {{calculatedPremium}}</p>
             
                 </div>
                 <div class="modal-footer">

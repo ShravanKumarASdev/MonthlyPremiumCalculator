@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthlyPremiumCalculator.API", "src\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API.csproj", "{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonthlyPremiumCalculator.API", "src\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API.csproj", "{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "tests", "tests", "{160A6CF3-9B38-48DB-B2A2-FCA9BFA2F28A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthlyPremiumCalculator.API.Test", "MonthlyPremiumCalculator.API.Test\MonthlyPremiumCalculator.API.Test.csproj", "{87D133D6-4E80-4129-8DFB-E9086B85EBB9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,6 +17,10 @@ Global
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Release|Any CPU.Build.0 = Release|Any CPU
+		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

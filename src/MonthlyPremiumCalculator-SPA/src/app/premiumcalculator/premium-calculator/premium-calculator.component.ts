@@ -24,52 +24,59 @@ export class PremiumCalculatorComponent implements OnInit {
 
   constructor(private premiumCalculatorService: PremiumCalculatorService, private occupationsService: OccupationsService, private formBuilder: FormBuilder) {}
 
-
   public displayStyle = "none";
   public occupations:any =[];
 
-  onDataChange(){
+  onDateChange(){
+    //Code to find age on Date change
     let timeDiff = Math.abs(Date.now() - new Date(this.formData.DateOfBirth).getTime());
     this.formData.Age = Math.floor((timeDiff / (1000 * 3600 * 24))/365.25);
   }
 
+  //Triggers Premium calculation and fields validation on Occupation change and Submit click
   calculatePremium(){
     this.submitted = true;
 
+    //Will not call Service method to calculate premium unless form is valid
     if(this.form.invalid){
-      console.log(this.form);
       return;
     }
     this.premiumCalculatorService.calculateMonthlyPremium(this.formData)
     .subscribe((data)=>{this.calculatedPremium = data; this.openPopup();});
   }
 
+  //Retrieves Form controls
   get f(): { [key: string]: AbstractControl } {
     return this.form.controls;
   }
   
+  //Method to open Premium display popup
   openPopup() {
     this.displayStyle = "block";
   }
+
+  //Method to close Premium display popup
   closePopup() {
     this.displayStyle = "none";
   }
 
+  //Method to reset the Premium Calculator UI
   reset(){
     this.submitted = false;
     this.form.reset();
   }
 
   ngOnInit(): void {
+    //Initializing Form Validators
     this.form = this.formBuilder.group(
       {
-        name: ['',[Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],
+        name: ['',[Validators.required, Validators.pattern('^[a-zA-Z ]+$')]],//Required and should allow only letters
         age: [],
         dateOfBirth: ['',Validators.required],
         occupation: ['',
             Validators.required
           ],
-        deathSumInsured: ['',[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]]
+        deathSumInsured: ['',[Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)]]//Required and should allow only numbers greater than zero
       }
     );
 
