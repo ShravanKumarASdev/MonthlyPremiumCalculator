@@ -27,7 +27,7 @@ namespace MonthlyPremiumCalculator.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add service and create Policy with options
+            //CorsPlocy for SPA and API interaction
             services.AddCors(options =>
             {
                 options.AddPolicy("CorsPolicy",
@@ -35,7 +35,11 @@ namespace MonthlyPremiumCalculator.API
                     .AllowAnyMethod()
                     .AllowAnyHeader());
             });
+
+            //EFCore Inmemory context
             services.AddDbContext<ApiContext>(option => option.UseInMemoryDatabase("MonthlyPremiumCalculationApp"));
+
+            //Added to resolve data mapping issues between SPA and API
             services.AddControllers().AddNewtonsoftJson();
         }
 

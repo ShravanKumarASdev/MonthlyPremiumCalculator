@@ -20,7 +20,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\src\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API.csproj" />
+    <ProjectReference Include="..\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API.csproj" />
   </ItemGroup>
 
 </Project>

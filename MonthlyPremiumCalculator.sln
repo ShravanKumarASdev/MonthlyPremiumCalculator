@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonthlyPremiumCalculator.API", "src\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API\MonthlyPremiumCalculator.API.csproj", "{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MonthlyPremiumCalculator.API.Test", "MonthlyPremiumCalculator.API.Test\MonthlyPremiumCalculator.API.Test.csproj", "{87D133D6-4E80-4129-8DFB-E9086B85EBB9}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "MonthlyPremiumCalculator.API.Test", "src\MonthlyPremiumCalculator.API.Test\MonthlyPremiumCalculator.API.Test.csproj", "{486D4A7B-5CBB-4875-8140-59508F827A7E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1FC3251-F703-4B4E-9C2E-D2018C5AC573}.Release|Any CPU.Build.0 = Release|Any CPU
-		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{87D133D6-4E80-4129-8DFB-E9086B85EBB9}.Release|Any CPU.Build.0 = Release|Any CPU
+		{486D4A7B-5CBB-4875-8140-59508F827A7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{486D4A7B-5CBB-4875-8140-59508F827A7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{486D4A7B-5CBB-4875-8140-59508F827A7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{486D4A7B-5CBB-4875-8140-59508F827A7E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

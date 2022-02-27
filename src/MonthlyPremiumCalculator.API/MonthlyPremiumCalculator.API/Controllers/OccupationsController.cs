@@ -22,6 +22,7 @@ namespace MonthlyPremiumCalculator.API.Controllers
         [HttpGet]
         public List<string> Get()
         {
+            //Retrieves all Occupations to be displaed in UI dropdown
             List<OccupationRating> occupationRatings = _context.OccupationRatings.ToList();
 
             return occupationRatings.Select(occupationRating => occupationRating.Occupation).ToList();

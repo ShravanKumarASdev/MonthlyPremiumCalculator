@@ -24,6 +24,7 @@ namespace MonthlyPremiumCalculator.API.Controllers
         [HttpPost]
         public decimal Post([FromBody]PremiumInputModel premiumInputModel)
         {
+            //Calculates monthly premium based on given inputs
             List<OccupationRating> occupationRatings = _context.OccupationRatings.ToList();
             List<RatingFactor> ratingFactors = _context.RatingFactors.ToList();
 
