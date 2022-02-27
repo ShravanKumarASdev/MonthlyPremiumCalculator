@@ -1,0 +1,14 @@
+.form {
+    margin: 0 auto !important;
+    float: none !important;
+}
+.jumbtron {
+    padding-top: 60px;
+}
+h5{
+    display: inline;
+}
+input{
+    margin-left:5px;
+    float:right;
+}

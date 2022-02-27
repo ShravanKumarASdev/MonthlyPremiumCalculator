@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace MonthlyPremiumCalculator.API.Controllers
 {
-    [Route("[controller]")]
+    [Route("api/[controller]")]
     [ApiController]
     public class PremiumCalculatorController : ControllerBase
     {

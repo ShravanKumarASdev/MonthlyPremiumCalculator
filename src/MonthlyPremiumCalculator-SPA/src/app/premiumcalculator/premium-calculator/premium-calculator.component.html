@@ -1,0 +1,20 @@
+<div class="title-home container mt-5 text-center">
+    <h1>Welcome to Premium calculator</h1>
+    <p class="lead">A platform to calculate your monthly premium</p>
+    <div class="jumbtron">
+    <form #form="ngForm" autocomplete="off" class="col-md-4 form">
+      <div class="form-group text-center">  
+        <h5 class="text-center text-primary">Name</h5>
+        <input type="text" name="name" [(ngModel)]="formData.name" required>
+      </div>
+      <div class="form-group text-center">
+        <h5 class="text-center text-primary">Age</h5>
+        <input type="text" name="age" [(ngModel)]="formData.age" required>
+      </div>
+      <div class="form-group text-center">
+        <button class="btn btn-success mr-4" [disabled]="form.invalid" type="submit">Calculate</button>
+        <button class="btn btn-primary" type="button">Reset</button>
+      </div>
+    </form>
+  </div>
+</div>
